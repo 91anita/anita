@@ -23,7 +23,17 @@ function showOnScreen(obj){
         localStorage.removeItem(obj.Email)
         parentElement.removeChild(childElement)
     }
+    const editButton=document.createElement('input')
+    editButton.type="button"
+    editButton.value='Edit'
+    editButton.onclick=() =>{
+        localStorage.removeItem(obj.Email)
+        parentElement.removeChild(childElement)
+        document.getElementById('name').value=obj.Name
+        document.getElementById('email').value=obj.Email
+    }
     childElement.appendChild(deleteButton)
+    childElement.appendChild(editButton)
     parentElement.appendChild(childElement)
      //parentElement.innerHTML = parentElement.innerHTML+ <li>${obj.Name} - ${obj.Email}</li>
 }
