@@ -9,5 +9,13 @@ const obj={
     Name,
     Email
 }
-localStorage.setItem("userDetails",JSON.stringify(obj))
+localStorage.setItem(obj.Email,JSON.stringify(obj))
+showOnScreen(obj)
+}
+function showOnScreen(obj){
+    const parentElement=document.getElementById('users')
+    var childElement=document.createElement('li')
+    childElement.textContent=obj.Name+'-'+obj.Email
+    parentElement.appendChild(childElement)
+     //parentElement.innerHTML = parentElement.innerHTML+ <li>${obj.Name} - ${obj.Email}</li>
 }
